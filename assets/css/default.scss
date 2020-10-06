@@ -1,0 +1,300 @@
+﻿@import url(./normalize.css);
+
+@function vw($size, $breakpoint: 375) {
+  @return ($size / $breakpoint) * 100vw;
+}
+
+html {
+  font-family: "PingFangTC-Regular", "Heiti TC", "Noto Sans TC", "Microsoft JhengHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  body {
+    margin: 0;
+    background-color: #eeeeee;
+    .mem_form {
+      margin: 30px auto;
+      max-width: 900px;
+      box-sizing: border-box;
+      background-color: white;
+      padding: 20px 50px;
+      form {
+        input {
+          //清除預設
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+          outline: none;
+          background: none;
+          border: none;
+        }
+        h2 {
+          margin-top: 0;
+          font-size: 28px;
+        }
+        h3 {
+          margin: 0;
+          font-size: 20px;
+          border-top: 1px solid #999;
+          box-sizing: border-box;
+          padding: 20px 0;
+        }
+        h4 {
+          font-size: 16px;
+        }
+
+        .form_title {
+          margin-bottom: 20px;
+
+          label {
+            font-size: 18px;
+            font-weight: 800;
+            display: inline-block;
+            width: 15%;
+            color: #5ac832;
+          }
+          select {
+            //清除預設
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            outline: none;
+            background: none;
+            border: none;
+
+            display: inline-block;
+            font-size: 18px;
+            width: 342px;
+            height: 41px;
+            padding: 0 15px;
+            box-sizing: border-box;
+
+            color: #707070;
+            background-image: url(./img/select_arrow.png);
+            background-repeat: no-repeat;
+          }
+          select::-ms-expand {
+            display: none;
+          }
+
+          .pres_price {
+            display: inline-block;
+            margin-left: 5px;
+            color: #707070;
+          }
+          input[type="text"] {
+            font-size: 18px;
+            display: inline-block;
+            width: 342px;
+            height: 40px;
+            border-radius: 7px;
+            box-sizing: border-box;
+            border: 1px solid #5ac832;
+            color: #707070;
+          }
+
+          input.mem_add {
+            width: 80%;
+          }
+
+          .add_tip {
+            display: inline-block;
+
+            margin-left: 15%;
+            color: #707070;
+          }
+        }
+        .checkbox {
+          font-size: 18px;
+          margin-bottom: 60px;
+          color: #707070;
+          input[type="checkbox"] {
+            display: none;
+          }
+          input[type="checkbox"] + label::before {
+            content: "";
+            display: inline-block;
+            position: absolute;
+            left: 0;
+
+            width: 25px;
+            height: 26px;
+            background-image: url(./img/checkbox_off.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+          }
+          input[type="checkbox"]:checked + label::before {
+            background-image: url(./img/checkbox_on.png);
+          }
+          label {
+            position: relative;
+            display: inline-block;
+            line-height: 30px;
+            padding-left: 30px;
+          }
+          label::after {
+            content: "";
+            display: table;
+            clear: both;
+          }
+        }
+        .submit {
+          text-align: center;
+          margin-bottom: 40px;
+          input[type="submit"] {
+            background-color: #7e8083;
+            box-sizing: border-box;
+            padding: 10px 0;
+            border: 1px solid #7e8083;
+            border-radius: 50px;
+            color: white;
+            font-size: 22px;
+            width: 310px;
+          }
+          input[type="button"] {
+            background-color: white;
+            box-sizing: border-box;
+            padding: 10px 0;
+            border: 1px solid #7e8083;
+            border-radius: 50px;
+            margin-left: 25px;
+            color: #7e8083;
+            font-size: 22px;
+            width: 310px;
+          }
+        }
+        .remind {
+          p {
+            color: #707070;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  html {
+    body {
+      .mem_form {
+        margin: 0 auto;
+        padding: vw(20);
+        form {
+          h2 {
+            font-size: vw(24);
+          }
+          h3 {
+            font-size: vw(17);
+            margin-bottom: vw(8);
+          }
+          h4 {
+            font-size: vw(14);
+            margin: 0;
+          }
+          .form_title {
+            position: relative;
+            margin-bottom: vw(15);
+            label {
+              display: none;
+            }
+            select {
+              width: 100%;
+              height: vw(50);
+              box-sizing: border-box;
+              font-size: vw(15);
+              padding: 0 vw(15);
+              background-image: url(./img/select_arrow_mb.png);
+              background-size: contain;
+            }
+            .pres_price {
+              margin: vw(10) 0;
+              font-size: vw(15);
+            }
+            input[type="text"] {
+              width: 100%;
+              height: vw(50);
+              box-sizing: border-box;
+              font-size: vw(15);
+              padding: 0 vw(15);
+            }
+
+            .add_tip {
+              margin: vw(10) 0;
+
+              font-size: vw(15);
+              a {
+                display: block;
+                margin-top: vw(5);
+              }
+            }
+          }
+          .form_title::before {
+            display: inline-block;
+            width: auto;
+            position: absolute;
+            left: vw(18);
+            top: vw(-8);
+            color: #5ac832;
+            background-color: white;
+            font-size: vw(15);
+            font-weight: 800;
+          }
+          .select1::before {
+            content: "遊戲名稱";
+          }
+          .select2::before {
+            content: "活動名稱";
+          }
+          .select3::before {
+            content: "贈品名稱";
+          }
+          .text1::before {
+            content: "收件人姓名";
+          }
+          .text2::before {
+            content: "連絡電話1";
+          }
+          .text3::before {
+            content: "連絡電話2";
+          }
+          .text4::before {
+            content: "收件地址";
+          }
+          .checkbox {
+            font-size: vw(15);
+            margin-bottom: vw(40);
+            color: #707070;
+            input[type="checkbox"] + label::before {
+              width: vw(21);
+              height: vw(22);
+              left: 0;
+            }
+            label {
+              padding-left: vw(25);
+              line-height: normal;
+            }
+          }
+          .submit {
+            text-align: center;
+            margin-bottom: vw(30);
+            input[type="submit"] {
+              font-size: vw(16);
+              width: 100%;
+              margin-bottom: vw(15);
+              height: vw(50);
+            }
+            input[type="button"] {
+              margin-left: 0;
+              font-size: vw(16);
+              width: 100%;
+              height: vw(50);
+            }
+          }
+          .remind {
+            p {
+              color: #707070;
+              font-size: vw(14);
+            }
+          }
+        }
+      }
+    }
+  }
+}
